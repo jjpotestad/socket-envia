@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Envia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <style>
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-top: 20%;
+        }
+
+        span {
+            margin-left: 25px;
+            font-size: 50px;
+            color: grey;
+        }
+
+        p {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: larger;
+            font-weight: bold;
+            color: navy;
+        }
+
+        h3 {
+            margin-left: 45px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: larger;
+            font-weight: bold;
+            color: navy;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+          <div class="card">
+            <span><i class="fa fa-truck" aria-hidden="true"></i></span>
+            <h3 id="cant"></h3>
+            <p>Total de guias</p>
+          </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    var socket = io();
+    socket.on('count', (data) => {
+        document.getElementById('cant').innerHTML = data.cant;
+    });
+    </script>
+</body>
+</html>
