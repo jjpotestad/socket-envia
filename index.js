@@ -38,5 +38,5 @@ request.end();
 
 // Servidor http
 http.listen(3000, () => {
-    console.log('listening on localhost:3000');
+    console.log('listening on http://localhost:3000');
 });
